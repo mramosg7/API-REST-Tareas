@@ -1,0 +1,145 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": "La API de Tareas, desarrollada en Node.js utilizando el framework Express y respaldada por una base de datos MySQL, ofrece una solución completa para la gestión de tareas pendientes. Diseñada para ser eficiente y escalable, esta API proporciona operaciones clave para manejar tareas de manera efectiva."
+  },
+  "externalDocs": {
+    "description": "Perfil de GitHub",
+    "url": "https://github.com/mramosg7"
+  },
+  "host": "localhost:3900",
+  "basePath": "/api/tarea",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "Tareas",
+      "description": "Operaciones relacionadas con la gestión de tareas."
+    }
+  ],
+  "paths": {
+    "/tareas": {
+      "get": {
+        "tags" : ["Tareas"],
+        "summary": "Obtiene todas las tareas.",
+        "description": "Obtiene una lista de todas las tareas almacenadas.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/crear": {
+      "post": {
+        "tags" : ["Tareas"],
+        "summary": "Crea una nueva tarea.",
+        "description": "Crea una nueva tarea con detalles específicos.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "example": "Tarea de ejemplo"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/update": {
+      "put": {
+        "tags" : ["Tareas"],
+        "summary": "Actualiza el estado de una tarea.",
+        "description": "Actualiza el estado de una tarea entre pendiente, en progreso o completada.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": 1
+                },
+                "estado": {
+                  "example": "Completada"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/delete": {
+      "delete": {
+        "tags" : ["Tareas"],
+        "summary": "Elimina una tarea.",
+        "description": "Elimina una tarea existente.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
