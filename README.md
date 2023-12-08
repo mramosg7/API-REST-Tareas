@@ -36,7 +36,7 @@ Lo siguiente es una documentación básica de la API y se proporciona únicament
 ```
 ### Crear Nueva Tarea
 
-```http
+```
   POST /api/tarea/crear
 ```
 | Parameter | Type     | Description                |
