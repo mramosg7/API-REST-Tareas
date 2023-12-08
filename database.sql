@@ -16,3 +16,7 @@ CREATE TABLE Tarea (
     created_at DATE NOT NULL,
     FOREIGN KEY (estado) REFERENCES Estados(id)
 );
+
+INSERT INTO Estados(descripcion) VALUES('Pendiente')
+INSERT INTO Estados(descripcion) VALUES('En proceso')
+INSERT INTO Estados(descripcion) VALUES('Terminado')

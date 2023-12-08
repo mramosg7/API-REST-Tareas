@@ -61,7 +61,13 @@ const createTarea = async(req,res) =>{
 const updateTarea = async (req, res) => {
     const id = req.id;
     const estado = req.estado
- 
+
+    if(!await getTareaById(id)) {
+        return res.status(404).send({
+            message:"Tarea no encontrada"
+        })
+    }
+    
     const query = `UPDATE Tarea SET estado = ? WHERE id = ?`;
 
     let connection = null;
