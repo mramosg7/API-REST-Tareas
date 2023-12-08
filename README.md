@@ -12,7 +12,7 @@ Lo siguiente es una documentación básica de la API y se proporciona únicament
 
 ### Obtener todas las tareas
 
-```http
+```
   GET /api/tarea/tareas
 ```
 #### Ejemplo de respuesta: 
@@ -52,7 +52,7 @@ Lo siguiente es una documentación básica de la API y se proporciona únicament
 
 ### Actualizar Estado de Tarea
 
-```http
+```
   PUT /api/tarea/update
 ```
 | Parameter | Type     | Description                |
@@ -69,7 +69,7 @@ Lo siguiente es una documentación básica de la API y se proporciona únicament
 
 ### Eliminar Tarea
 
-```http
+```
   DELETE /api/tarea/delete
 ```
 | Parameter | Type     | Description                |
